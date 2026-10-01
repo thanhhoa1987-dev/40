@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary & Grammar Unit Test – Grade 6 – A2 – 52 Questions</title>
+<style>
+
+:root{
+  --bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#667085;--line:#d9e2ef;
+  --primary:#2457d6;--primary-soft:#eaf0ff;--success:#16794b;--success-soft:#eaf8f0;
+  --warning:#9a6700;--warning-soft:#fff6dd;--danger:#b42318;--danger-soft:#fff0ee;
+  --shadow:0 10px 30px rgba(25,42,70,.08);--radius:18px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--text);background:radial-gradient(circle at top left,rgba(36,87,214,.08),transparent 28rem),var(--bg);
+  line-height:1.55
+}
+button,input{font:inherit}button{cursor:pointer}
+.app{width:min(1240px,calc(100% - 28px));margin:auto;padding:28px 0 56px}
+.hero{
+  background:linear-gradient(135deg,#173f9a,#2f6ce5);color:#fff;border-radius:24px;padding:28px;
+  box-shadow:var(--shadow);margin-bottom:20px
+}
+.hero h1{margin:0 0 8px;font-size:clamp(27px,4vw,42px);line-height:1.12}
+.hero p{margin:0;opacity:.94;max-width:980px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.badge{padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);font-weight:800;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.setup,.guide,.result{padding:22px;margin-bottom:20px}
+h2{margin:0 0 14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}label{font-weight:800;font-size:14px}
+input[type="text"]{width:100%;border:1px solid #c8d2e2;border-radius:12px;padding:12px 13px;outline:none;background:#fff}
+input[type="text"]:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(36,87,214,.12)}
+
+.theory-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.theory-box{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fbfcff}
+.theory-box h3{margin:0 0 8px}.formula{display:inline-block;background:var(--primary-soft);color:#173f9a;font-weight:900;padding:6px 10px;border-radius:9px;margin:4px 0}
+.theory-box ul{margin:8px 0 0;padding-left:20px}.theory-box li{margin:5px 0}
+.compare{margin-top:14px;border-top:1px solid var(--line);padding-top:14px;overflow-x:auto}
+.compare table{width:100%;border-collapse:collapse;min-width:650px}
+.compare th,.compare td{border:1px solid var(--line);padding:9px;vertical-align:top}
+.compare th{background:#f2f6ff;text-align:left}
+.note{margin-top:14px;padding:12px 14px;border-radius:12px;background:#fffaf0;border:1px solid #ead18c;color:#6f4b00}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{border:none;border-radius:12px;padding:11px 16px;font-weight:900;transition:.18s}
+.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--primary);color:#fff}.btn-secondary{background:#eef2f7;color:#22304a}.btn-success{background:var(--success);color:#fff}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+.quiz-area{display:none}
+.quiz-layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:18px;align-items:start}
+.sidebar{position:sticky;top:14px;padding:16px;max-height:calc(100vh - 28px);overflow:auto}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:11px;background:#fbfcff}
+.stat small{display:block;color:var(--muted);font-weight:800}.stat strong{display:block;font-size:20px;margin-top:3px}
+.progress-track{height:10px;background:#e9eef6;border-radius:999px;overflow:hidden;margin:10px 0 6px}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#2457d6,#5a87f0);transition:.25s}
+.progress-text{font-size:13px;color:var(--muted);font-weight:800}
+.palette{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px}
+.qnav{height:32px;border:1px solid #cad4e3;background:#fff;border-radius:8px;font-weight:900;color:#4a5870;font-size:13px}
+.qnav.answered{background:var(--primary-soft);border-color:#9eb8f7;color:#173f9a}.qnav.active{outline:3px solid rgba(36,87,214,.16)}
+.section-nav{margin-top:14px;display:grid;gap:6px}.section-nav button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px;text-align:left;font-weight:800;color:#344054}
+
+.section-title{padding:14px 18px;background:#eaf0ff;border:1px solid #bfd0fb;border-radius:14px;color:#173f9a;font-weight:900;font-size:18px;scroll-margin-top:14px}
+.questions{display:flex;flex-direction:column;gap:14px}
+.question-card{padding:19px;scroll-margin-top:14px}
+.qhead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.qnum{font-weight:900;font-size:18px}.topic-badge{font-size:12px;font-weight:900;padding:5px 9px;border-radius:999px;background:#eef3ff;color:#1d4ab5;white-space:nowrap}
+.instruction{display:inline-block;margin:4px 0 8px;padding:5px 9px;border-radius:8px;background:#fff4d6;color:#795000;font-weight:900;font-size:13px}
+.prompt{font-size:17px;font-weight:750;margin:8px 0 12px}
+.text-answer{max-width:800px}.helper{font-size:13px;color:var(--muted);margin-top:6px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}
+.option{display:flex;align-items:center;gap:9px;border:1px solid #c8d2e2;border-radius:11px;padding:10px 12px;background:#fff;font-weight:700;cursor:pointer}
+.option:hover{background:#f7f9ff;border-color:#9eb8f7}.option input{accent-color:var(--primary)}
+.submit-wrap{padding:18px;margin-top:16px;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+
+.result{display:none;margin-top:20px}
+.result-top{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center}
+.score-ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;position:relative}
+.score-ring::after{content:"";width:118px;height:118px;border-radius:50%;background:#fff;position:absolute}
+.score-inner{position:relative;z-index:1;text-align:center}.score-inner strong{font-size:34px;display:block;line-height:1}.score-inner span{font-size:13px;color:var(--muted);font-weight:800}
+.status{display:inline-flex;padding:7px 11px;border-radius:999px;font-weight:900;font-size:14px;margin-bottom:8px}
+.status.pass{background:var(--success-soft);color:var(--success)}.status.fail{background:var(--danger-soft);color:var(--danger)}
+.alert{border-radius:14px;padding:14px 16px;margin:16px 0;border:1px solid}
+.alert.fail{background:var(--danger-soft);border-color:#f0b8b3;color:#7a271a}.alert.pass{background:var(--success-soft);border-color:#a9dfc3;color:#125a39}.alert.warn{background:var(--warning-soft);border-color:#ead18c;color:#6f4b00}
+.diag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.diag-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcff}.diag-card h4{margin:0 0 6px}.diag-card p{margin:5px 0;color:#48566f}
+.diag-meter{height:8px;background:#e9eef6;border-radius:999px;overflow:hidden;margin:8px 0}.diag-meter span{display:block;height:100%;background:#2457d6}
+.review-list{display:grid;gap:12px;margin-top:14px}.review-item{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.review-item.correct{border-left:5px solid var(--success)}.review-item.wrong{border-left:5px solid var(--danger)}
+.review-item h4{margin:0 0 8px}.review-item p{margin:5px 0}
+.hidden{display:none!important}.footer-note{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+
+
+.review-confirm{display:flex;gap:9px;align-items:flex-start;margin-top:10px;padding:10px 12px;border-radius:10px;background:#f7f9fc;border:1px solid var(--line);font-weight:800}
+.review-confirm input{margin-top:4px;transform:scale(1.15)}
+.mastery-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 18px}
+.mastery-step{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fbfcff}.mastery-step strong{display:block;margin-bottom:3px}
+.correction-area{margin-top:18px;padding-top:4px}.correction-list{display:grid;gap:12px;margin-top:12px}
+.correction-card{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fff}.correction-card.good{border-left:5px solid var(--success);background:#fbfffd}.correction-card.bad{border-left:5px solid var(--warning);background:#fffdf7}
+.correction-card h4{margin:0 0 7px}.correction-card input{width:100%;border:1px solid #c8d2e2;border-radius:11px;padding:11px 12px;margin-top:8px}.correction-card input:disabled{background:#eef8f3;color:#125a39;font-weight:800}
+.completion-banner{border:2px solid #73c89e;background:linear-gradient(135deg,#effbf5,#f9fffc);border-radius:18px;padding:18px;margin-top:18px}.completion-banner h3{margin:0 0 8px;color:#125a39;font-size:24px}
+.verify-code{display:inline-block;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#14213d;color:#fff;padding:8px 11px;border-radius:9px;font-weight:900;letter-spacing:.06em}
+.teacher-report{margin-top:12px;border:1px dashed #aebbd0;border-radius:12px;padding:12px;background:#f8fafc}.teacher-report p{margin:4px 0}
+.lock-note{font-size:13px;color:var(--muted);margin-top:8px}
+@media(max-width:720px){.mastery-steps{grid-template-columns:1fr}}
+@media(max-width:620px){.options{grid-template-columns:1fr}}
+
+@media(max-width:900px){.quiz-layout{grid-template-columns:1fr}.sidebar{position:static;max-height:none}.theory-grid,.diag-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.form-grid{grid-template-columns:1fr}.result-top{grid-template-columns:1fr;text-align:center}.score-ring{margin:auto}.app{width:min(100% - 18px,1240px);padding-top:10px}.palette{grid-template-columns:repeat(7,1fr)}}
+@media print{body{background:#fff}.hero,.setup,.guide,.quiz-area,.footer-note,.no-print{display:none!important}.app{width:100%;padding:0}.result{display:block!important;box-shadow:none;border:none;padding:0}.review-item,.diag-card,.alert{break-inside:avoid}}
+
+</style>
+</head>
+<body>
+<div id="toast" class="toast"></div>
+<main class="app">
+
+<section class="hero">
+  <h1>VOCABULARY & GRAMMAR UNIT TEST</h1>
+  <p>Vocabulary • Pronunciation • Stress • Sentence transformation • Present Simple & Present Continuous</p>
+  <div class="badges">
+    <span class="badge">⏱ 40 phút</span>
+    <span class="badge">📝 52 câu</span>
+    <span class="badge">🎯 Grade 6 – A2</span>
+    <span class="badge">✅ Đạt từ 7.0</span>
+    <span class="badge">🔁 Có Correction Check bắt buộc khi còn lỗi</span>
+  </div>
+</section>
+
+<section class="setup card" id="setup">
+  <h2>Thông tin học sinh</h2>
+  <div class="form-grid">
+    <div class="field"><label for="studentName">Họ và tên *</label><input id="studentName" type="text" placeholder="Ví dụ: Nguyễn Minh Anh"></div>
+    <div class="field"><label for="studentClass">Lớp *</label><input id="studentClass" type="text" placeholder="Ví dụ: 6A1"></div>
+    <div class="field"><label for="studentCode">Số thứ tự / Mã học sinh</label><input id="studentCode" type="text" placeholder="Ví dụ: 12"></div>
+    <div class="field"><label>Gửi kết quả</label><div id="sheetConnection" style="padding:12px 13px;border:1px solid #c8d2e2;border-radius:12px;background:#fbfcff;font-weight:800;color:#667085">Đang kiểm tra kết nối Google Sheet…</div></div>
+  </div>
+</section>
+
+<section class="guide card" id="guide">
+  <h2>Hướng dẫn làm Unit Test</h2>
+  <div class="theory-grid">
+    <article class="theory-box">
+      <h3>1. Vocabulary</h3>
+      <div class="formula">Places in town • Adjectives</div>
+      <ul><li>Đọc cả câu để xác định địa điểm hoặc tính từ phù hợp.</li><li>Chỉ có một đáp án đúng nhất.</li></ul>
+    </article>
+    <article class="theory-box">
+      <h3>2. Pronunciation & Stress</h3>
+      <div class="formula">Sound • Primary stress</div>
+      <ul><li>Chọn từ có phần gạch chân phát âm khác.</li><li>Chọn từ có trọng âm chính khác.</li></ul>
+    </article>
+    <article class="theory-box">
+      <h3>3. Sentence transformation</h3>
+      <div class="formula">Rewrite without changing meaning</div>
+      <ul><li>Giữ nguyên nghĩa của câu gốc.</li><li>Chú ý so sánh hơn, as ... as, there is/are và sở hữu.</li></ul>
+    </article>
+    <article class="theory-box">
+      <h3>4. Present tenses</h3>
+      <div class="formula">Present Simple • Present Continuous</div>
+      <ul><li>often, usually, every ... → Present Simple.</li><li>now, at the moment, Look! → Present Continuous.</li></ul>
+    </article>
+  </div>
+
+  <div class="note">
+    <b>QUY TẮC NHẬP ĐÁP ÁN:</b><br>
+    • Câu trắc nghiệm: chọn <b>một</b> đáp án A, B, C hoặc D.<br>
+    • Câu viết: điền phần còn thiếu; một số cách diễn đạt tương đương đúng vẫn được chấp nhận.<br>
+    • Không trừ điểm vì viết hoa/viết thường, dấu chấm/dấu hỏi cuối câu hoặc khoảng trắng thừa.<br>
+    • Điểm chỉ hiện sau khi nộp. Dưới 7.0: chỉ xem điểm + phần cần ôn. Từ 7.0 trở lên: xem câu sai, đọc chữa, rồi làm Correction Check nếu còn lỗi.
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" id="startBtn">Bắt đầu làm bài – 40 phút</button>
+  </div>
+</section>
+
+<section class="quiz-area" id="quizArea">
+  <div class="quiz-layout">
+    <aside class="sidebar card">
+      <div class="stat-grid">
+        <div class="stat"><small>Tiến độ</small><strong id="answeredStat">0/52</strong></div>
+        <div class="stat"><small>Điểm</small><strong id="liveScore">Chưa chấm</strong></div>
+        <div class="stat"><small>Thời gian</small><strong id="timer">40:00</strong></div>
+        <div class="stat"><small>Trạng thái</small><strong id="statusStat" style="font-size:16px">Đang làm</strong></div>
+      </div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="progress-text" id="progressText">Đã trả lời 0/52 câu</div>
+      <div class="palette" id="palette"></div>
+      <div class="section-nav" id="sectionNav"></div>
+    </aside>
+    <div>
+      <div class="questions" id="questions"></div>
+      <div class="submit-wrap card">
+        <button class="btn btn-secondary" id="saveBtn">Lưu tạm trên máy</button>
+        <button class="btn btn-primary" id="submitBtn">Nộp bài & Xem điểm</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="result card" id="result"></section>
+<div class="footer-note">Grade 6 • A2 • Unit Test • 52 questions • Connected Google Sheet</div>
+</main>
+
+<script>
+(() => {
+const TOTAL_TIME = 40 * 60;
+const PASS_SCORE = 7.0;
+const STORAGE_KEY = "g6_unit_test_a2_52q_v1";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwSgm4ve6VHGz1ksL7ltOrw6-YwQBRlyvhTZywRKIqAXeyufHC9UhIi7r-qWiUlYSoJ-w/exec";
+const QUIZ_ID = "G6_UNIT_TEST_A2_52Q";
+const QUIZ_TITLE = "Vocabulary & Grammar Unit Test - Grade 6 - A2 - 52 Questions";
+
+const sections = [
+  {id:"vocab",title:"Part 1. Vocabulary – Questions 1–20"},
+  {id:"pron",title:"Part 2. Pronunciation – Questions 21–24"},
+  {id:"stress",title:"Part 3. Word Stress – Questions 25–28"},
+  {id:"rewrite",title:"Part 4. Sentence Transformation – Questions 29–38"},
+  {id:"compare",title:"Part 5. Comparatives – Questions 39–40"},
+  {id:"tenses",title:"Part 6. Present Simple / Present Continuous – Questions 41–52"}
+];
+
+const groups = {
+  vocab:{title:"Vocabulary",review:"Ôn từ vựng về places in town và tính từ miêu tả khu vực/địa điểm."},
+  pron:{title:"Pronunciation",review:"Đọc chậm từng từ và so sánh âm của phần được gạch chân."},
+  stress:{title:"Word Stress",review:"Xác định âm tiết mang trọng âm chính của từng từ."},
+  rewrite:{title:"Sentence Transformation",review:"Giữ nguyên nghĩa; chú ý there is/are, phương tiện, sở hữu và vị trí."},
+  compare:{title:"Comparatives",review:"Ôn comparative adjectives/adverbs và as ... as."},
+  tenses:{title:"Present Tenses",review:"Dấu hiệu thói quen → Present Simple; hành động đang diễn ra → Present Continuous."}
+};
+
+const q=[];
+function mc(id,section,group,prompt,options,key,explanation){q.push({id,section,group,type:"mcq",prompt,options,key,answers:[key],displayAnswer:`${key}. ${options["ABCD".indexOf(key)]}`,explanation,instruction:"CHỌN ĐÁP ÁN ĐÚNG NHẤT"})}
+function tx(id,section,group,prompt,answers,displayAnswer,explanation){q.push({id,section,group,type:"text",prompt,answers,displayAnswer,explanation,instruction:"ĐIỀN PHẦN CÒN THIẾU"})}
+
+const vocab=[
+["We need some medicine. Let’s go to the ______.",["bakery","pharmacy","gift shop","shoe shop"],"B"],["The children are playing on the swings at the ______.",["bus stop","town square","children’s playground","railway station"],"C"],["My mother buys fresh vegetables at the ______.",["greengrocer’s","barber’s","chemist’s","sports shop"],"A"],["We can see many beautiful paintings at the ______.",["art gallery","department store","beauty salon","general store"],"A"],["My village is very ______. There isn’t much noise or traffic.",["crowded","polluted","peaceful","boring"],"C"],["My father needs a haircut. He is going to the ______.",["barber’s","bakery","grocery","pharmacy"],"A"],["The market is very ______ today. There are people everywhere.",["peaceful","crowded","boring","modern"],"B"],["Firefighters work at a ______.",["police station","petrol station","fire station","railway station"],"C"],["We are waiting for the number 5 bus at the ______.",["bus stop","lamp post","town square","market"],"A"],["This ______ building is very old and important to our town.",["modern","historic","convenient","comfortable"],"B"],["My sister goes to the ______ to have her hair cut.",["dress shop","hairdresser’s","charity shop","antique shop"],"B"],["The supermarket is very ______. It is just next to my house.",["expensive","crowded","convenient","polluted"],"C"],["People can walk under this busy road through the ______.",["bus stop","pedestrian subway","railway station","town square"],"B"],["This street is very ______. Two cars cannot go side by side.",["heavy","narrow","peaceful","modern"],"B"],["There is a large ______ of a famous person in the town square.",["statue","market","palace","cathedral"],"A"],["We stayed at a ______ near the beach on our holiday.",["hospital","restaurant","hotel","market"],"C"],["The air is dirty here. This area is very ______.",["friendly","peaceful","polluted","fantastic"],"C"],["This chair is very ______. I like sitting on it.",["comfortable","crowded","narrow","historic"],"A"],["Dad needs petrol for the car. Let’s find a ______.",["fire station","petrol station","police station","railway station"],"B"],["This bag costs a lot of money. It is very ______.",["cheap","friendly","expensive","peaceful"],"C"]];
+vocab.forEach((x,i)=>mc(i+1,"vocab","vocab",x[0],x[1],x[2],"Dựa vào nghĩa của cả câu để chọn từ phù hợp."));
+
+mc(21,"pron","pron","Choose the word whose underlined part differs in pronunciation.",["big","finally","quiet","exciting"],"A","The underlined i in big is /ɪ/; in finally, quiet and exciting it is /aɪ/.");
+mc(22,"pron","pron","Choose the word whose underlined part differs in pronunciation.",["evening","enough","gallery","English"],"B","Compare the pronunciation of the underlined part in the four source words.");
+mc(23,"pron","pron","Choose the word whose underlined part differs in pronunciation.",["funny","lunch","student","suburb"],"C","student has /juː/ for the target u; the other target u sounds are /ʌ/.");
+mc(24,"pron","pron","Choose the word whose underlined part differs in pronunciation.",["office","behind","clinic","picture"],"B","The underlined i in behind is /aɪ/; in office, clinic and picture it is /ɪ/.");
+const pronunciationUnderline={
+  21:[[1,2],[1,2],[2,3],[3,4]],
+  22:[[0,1],[0,1],[4,5],[0,1]],
+  23:[[1,2],[1,2],[2,3],[3,4]],
+  24:[[3,4],[3,4],[2,3],[1,2]]
+};
+mc(25,"stress","stress","Choose the word with a different primary stress.",["busy","dislike","exciting","cathedral"],"A","busy is stressed on the first syllable; the others on the second.");
+mc(26,"stress","stress","Choose the word with a different primary stress.",["conserve","finally","turning","concert"],"A","conserve (verb) is stressed on the second syllable; the others on the first.");
+mc(27,"stress","stress","Choose the word with a different primary stress.",["temple","suburb","cuisine","palace"],"C","cuisine is stressed on the second syllable; the others on the first.");
+mc(28,"stress","stress","Choose the word with a different primary stress.",["number","morning","greeting","repeat"],"D","repeat is stressed on the second syllable; the others on the first.");
+
+tx(29,"rewrite","rewrite","Phong likes Maths most. → Phong’s favourite ______.",["subject is maths","subject is math","phong's favourite subject is maths","phong’s favourite subject is maths"],"subject is Maths","favourite subject = môn học yêu thích.");
+tx(30,"rewrite","compare","James is more hard-working than Alex. → Alex is not ______.",["as hard-working as james","as hardworking as james"],"as hard-working as James","not as + adjective + as.");
+tx(31,"rewrite","compare","Hoa is not as lazy as Huy. → Huy is ______.",["lazier than hoa"],"lazier than Hoa","lazy → lazier; đảo đối tượng so sánh.");
+tx(32,"rewrite","rewrite","Does Phong’s school have forty classrooms? → Are ______?",["there forty classrooms in phong's school","there forty classrooms in phong’s school"],"there forty classrooms in Phong’s school","have ↔ there are.");
+tx(33,"rewrite","rewrite","My father usually drives to work. → My father usually goes ______.",["to work by car"],"to work by car","drive to work ↔ go to work by car.");
+tx(34,"rewrite","rewrite","This house is small. → It is ______.",["a small house"],"a small house","be + adjective ↔ adjective + noun.");
+tx(35,"rewrite","rewrite","The bookstore is to the right of the toy store. → The toy store ______.",["is to the left of the bookstore"],"is to the left of the bookstore","right of ↔ left of khi đổi chủ thể.");
+tx(36,"rewrite","rewrite","Does your class have forty students? → Are ______?",["there forty students in your class"],"there forty students in your class","have ↔ there are.");
+tx(37,"rewrite","rewrite","That motorbike belongs to Mr. Trung. → That is ______.",["mr trung's motorbike","mr. trung's motorbike","mr trung’s motorbike","mr. trung’s motorbike"],"Mr. Trung’s motorbike","belong to + person ↔ person’s + noun.");
+tx(38,"rewrite","rewrite","Does your father cycle to work? → Does your father ______?",["go to work by bike","go to work by bicycle"],"go to work by bike","cycle to work ↔ go to work by bike.");
+tx(39,"compare","compare","This exercise is easier than the last one. (difficult) → The last exercise ______.",["is more difficult than this exercise","is more difficult than this one"],"is more difficult than this exercise","easy ↔ difficult; long adjective uses more.");
+tx(40,"compare","compare","Minh runs faster than Nam. (slowly) → Nam ______.",["runs more slowly than minh"],"runs more slowly than Minh","fast ↔ slowly; adverb comparison: more slowly than.");
+
+tx(41,"tenses","tenses","They often (visit) ______ their parents during the holidays.",["visit"],"visit","often → Present Simple; plural subject → visit.");
+tx(42,"tenses","tenses","We (speak) ______ French at the moment.",["are speaking"],"are speaking","at the moment → Present Continuous.");
+tx(43,"tenses","tenses","I (watch) ______ TV about 3 hours a day.",["watch"],"watch","a day describes a routine → Present Simple.");
+tx(44,"tenses","tenses","My family usually (go) ______ to the movies on Sunday.",["goes"],"goes","usually → Present Simple; my family → goes.");
+tx(45,"tenses","tenses","Look at the girl! She (ride) ______ a horse.",["is riding"],"is riding","Look! → action happening now.");
+tx(46,"tenses","tenses","We (play) ______ tennis now.",["are playing"],"are playing","now → Present Continuous.");
+tx(47,"tenses","tenses","Minh sometimes (practice) ______ the guitar in his room.",["practices"],"practices","sometimes → Present Simple; Minh → practices.");
+tx(48,"tenses","tenses","______ you (like) ______ chocolate ice cream?",["do like","do you like","do / like","do, like"],"Do / like","like is a state verb; use Present Simple question: Do you like ...?");
+tx(49,"tenses","tenses","I really (like) ______ cooking.",["like"],"like","like is normally used in the Present Simple here.");
+tx(50,"tenses","tenses","Hung can’t answer the phone because he (take) ______ a shower.",["is taking"],"is taking","The action is happening now → Present Continuous.");
+tx(51,"tenses","tenses","We (go) ______ swimming every afternoon.",["go"],"go","every afternoon → Present Simple.");
+tx(52,"tenses","tenses","I (not / play) ______ football with my friends now.",["am not playing","'m not playing","’m not playing"],"am not playing","now → Present Continuous; negative with I: am not + V-ing.");
+
+const correctionBanks={
+  vocab:[{p:"You can buy bread and cakes at a ______.",a:["bakery"],d:"bakery",h:"A bakery sells bread and cakes."},{p:"A place where you can see paintings is an ______.",a:["art gallery"],d:"art gallery",h:"art gallery = phòng trưng bày nghệ thuật."}],
+  pron:[{p:"Write the odd word: big / quiet / exciting (target letter i).",a:["big"],d:"big",h:"big has /ɪ/; quiet/exciting use /aɪ/ for the target i."}],
+  stress:[{p:"Write the odd word by stress: temple / cuisine / palace.",a:["cuisine"],d:"cuisine",h:"cuisine has stress on the second syllable."}],
+  rewrite:[{p:"My mother drives to work. → My mother goes to work ______.",a:["by car"],d:"by car",h:"drive → go ... by car."},{p:"The bank is to the left of the shop. → The shop is ______ the bank.",a:["to the right of"],d:"to the right of",h:"left ↔ right when the subject changes."}],
+  compare:[{p:"This book is (difficult) ______ than that one.",a:["more difficult"],d:"more difficult",h:"Long adjective: more + adjective."},{p:"Lan walks (slowly) ______ than Mai.",a:["more slowly"],d:"more slowly",h:"Adverb: more slowly."}],
+  tenses:[{p:"She usually (go) ______ to school by bus.",a:["goes"],d:"goes",h:"usually → Present Simple; she → goes."},{p:"Look! They (play) ______ football.",a:["are playing"],d:"are playing",h:"Look! → Present Continuous."}]
+};
+
+const state={
+  started:false,submitted:false,timeLeft:TOTAL_TIME,timerId:null,
+  answers:{},reviewChecks:{},correctionAnswers:{},correctionAttempt:0,
+  correctionStarted:false,completed:false,submittedAt:null,completedAt:null,
+  attemptId:null,sentEvents:{},warningsShown:{}
+};
+
+const $=id=>document.getElementById(id);
+
+function normalize(v){
+  return String(v??"").toLowerCase().normalize("NFKC")
+    .replace(/[’‘`´]/g,"'")
+    .replace(/[.,!?;:\"“”()[\]{}]/g," ")
+    .replace(/\s+/g," ").trim();
+}
+function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+function optionHtml(item,o,j){
+  const span=pronunciationUnderline[item.id]?.[j];
+  if(!span)return esc(o);
+  return `${esc(o.slice(0,span[0]))}<u style="text-decoration-thickness:2px;text-underline-offset:3px">${esc(o.slice(span[0],span[1]))}</u>${esc(o.slice(span[1]))}`;
+}
+function isAnswered(i){const v=state.answers[i.id];return v!==undefined&&v!==null&&String(v).trim()!==""}
+function isCorrect(i){if(!isAnswered(i))return false;if(i.type==="mcq")return state.answers[i.id]===i.key;const v=normalize(state.answers[i.id]);return i.answers.map(normalize).includes(v)}
+function stats(){const correct=q.filter(isCorrect).length;return {correct,score:correct/q.length*10}}
+function answeredCount(){return q.filter(isAnswered).length}
+function wrongItems(){return q.filter(x=>!isCorrect(x))}
+function formatTime(sec){sec=Math.max(0,sec);return `${String(Math.floor(sec/60)).padStart(2,"0")}:${String(sec%60).padStart(2,"0")}`}
+function sheetConfigured(){return WEB_APP_URL.startsWith("https://script.google.com/")&&WEB_APP_URL.includes("/exec")}
+function makeAttemptId(){return `${QUIZ_ID}-${Date.now()}-${Math.random().toString(36).slice(2,8).toUpperCase()}`}
+
+function updateSheetConnection(text,type="info"){
+  const el=$("sheetConnection");
+  const styles={ok:["#eaf8f0","#16794b","#a9dfc3"],warn:["#fff6dd","#9a6700","#ead18c"],bad:["#fff0ee","#b42318","#f0b8b3"],info:["#fbfcff","#667085","#c8d2e2"]};
+  const [bg,color,border]=styles[type]||styles.info;
+  if(el){el.textContent=text;el.style.background=bg;el.style.color=color;el.style.borderColor=border}
+  const f=$("cloudFinalText");if(f)f.textContent=text;
+}
+
+function showToast(msg,kind="warning",ms=6500){
+  const t=$("toast");t.textContent=msg;t.className=`toast show ${kind}`;
+  clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.className="toast",ms);
+}
+
+function reportStatus(){
+  const {score}=stats(),w=wrongItems();
+  if(!state.submitted) return "ĐANG LÀM";
+  if(score<PASS_SCORE) return "ĐÃ NỘP BÀI - CHƯA ĐẠT";
+  if(!w.length) return "HOÀN THÀNH, KHÔNG CẦN CORRECTION CHECK";
+  if(state.completed) return "ĐÃ HOÀN THÀNH CORRECTION CHECK";
+  if(state.correctionStarted) return "ĐÃ NỘP BÀI - ĐANG CORRECTION CHECK";
+  return "ĐÃ NỘP BÀI - CHƯA HOÀN THÀNH CORRECTION CHECK";
+}
+
+function cloudPayload(eventType,statusOverride=null){
+  const {correct,score}=stats(),w=wrongItems();
+  return {
+    eventType,
+    event:eventType,
+    quizId:QUIZ_ID,
+    quizTitle:QUIZ_TITLE,
+    attemptId:state.attemptId||"",
+    studentCode:$("studentCode")?.value.trim()||"",
+    studentName:$("studentName").value.trim(),
+    studentClass:$("studentClass").value.trim(),
+    score:Number(score.toFixed(2)),
+    correct,
+    total:q.length,
+    wrongCount:w.length,
+    wrongQuestions:w.map(x=>x.id).join(", "),
+    status:statusOverride||reportStatus(),
+    reportStatus:statusOverride||reportStatus(),
+    submissionStatus:state.submitted?"ĐÃ NỘP BÀI":"ĐANG LÀM",
+    correctionStatus:state.completed?"ĐÃ HOÀN THÀNH CORRECTION CHECK":state.correctionStarted?"ĐANG LÀM CORRECTION CHECK":"CHƯA MỞ CORRECTION CHECK",
+    reviewReadCount:w.filter(i=>!!state.reviewChecks[i.id]).length,
+    correctionAttempt:state.correctionAttempt,
+    reviewCompleted:!!state.completed,
+    durationSeconds:TOTAL_TIME-state.timeLeft,
+    durationText:formatTime(TOTAL_TIME-state.timeLeft),
+    submittedAt:state.submittedAt||"",
+    completedAt:state.completedAt||"",
+    clientTime:new Date().toISOString()
+  };
+}
+
+async function sendToTeacher(eventType,statusOverride=null,force=false){
+  if(!sheetConfigured()){updateSheetConnection("Chưa kết nối Google Sheet","warn");return false}
+  const k=`${state.attemptId||"noattempt"}:${eventType}:${statusOverride||""}`;
+  if(!force&&state.sentEvents[k]) return true;
+  updateSheetConnection("Đang gửi kết quả về Google Sheet…","info");
+  try{
+    await fetch(WEB_APP_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(cloudPayload(eventType,statusOverride)),cache:"no-store"});
+    state.sentEvents[k]=new Date().toISOString();
+    save(false);
+    updateSheetConnection("✓ Đã gửi về Google Sheet","ok");
+    return true;
+  }catch(e){updateSheetConnection("Không gửi được – kiểm tra Internet rồi bấm Gửi lại","bad");return false}
+}
+
+function render(){
+  const box=$("questions"),pal=$("palette"),sn=$("sectionNav");
+  box.innerHTML="";pal.innerHTML="";sn.innerHTML="";
+  sections.forEach(sec=>{
+    const title=document.createElement("div");
+    title.className="section-title";title.id=`sec-${sec.id}`;title.textContent=sec.title;box.appendChild(title);
+
+    q.filter(x=>x.section===sec.id).forEach(item=>{
+      const card=document.createElement("article");
+      card.className="question-card card";card.id=`q-${item.id}`;card.dataset.qid=item.id;
+      const answerHtml=item.type==="mcq"
+        ? `<div class="options">${item.options.map((o,j)=>`<label class="option"><input type="radio" name="q${item.id}" data-q="${item.id}" value="${"ABCD"[j]}" ${state.answers[item.id]==="ABCD"[j]?"checked":""}> <b>${"ABCD"[j]}.</b> ${optionHtml(item,o,j)}</label>`).join("")}</div>`
+        : `<input class="text-answer" type="text" data-q="${item.id}" value="${esc(state.answers[item.id]||"")}" placeholder="Nhập phần còn thiếu...">`;
+      card.innerHTML=`<div class="qhead"><div class="qnum">Câu ${item.id}</div><span class="topic-badge">${esc(groups[item.group].title)}</span></div>
+      <div class="instruction">${esc(item.instruction)}</div>
+      <div class="prompt">${esc(item.prompt)}</div>
+      ${answerHtml}
+      <div class="helper">${item.type==="mcq"?"Chọn một đáp án.":"Không trừ điểm vì viết hoa/viết thường, dấu câu cuối câu hoặc khoảng trắng thừa."}</div>`;
+      box.appendChild(card);
+
+      const nav=document.createElement("button");
+      nav.className="qnav";nav.type="button";nav.dataset.qid=item.id;nav.textContent=item.id;
+      nav.onclick=()=>card.scrollIntoView({behavior:"smooth",block:"start"});
+      pal.appendChild(nav);
+    });
+
+    const b=document.createElement("button");b.type="button";b.textContent=sec.title;
+    b.onclick=()=>title.scrollIntoView({behavior:"smooth",block:"start"});
+    sn.appendChild(b);
+  });
+
+  document.querySelectorAll("[data-q]").forEach(el=>el.oninput=e=>{
+    state.answers[Number(e.target.dataset.q)]=e.target.value;update();save(false);
+  });
+  update();observe();
+}
+
+function observe(){
+  if(!("IntersectionObserver" in window))return;
+  const ob=new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){
+      document.querySelectorAll(".qnav").forEach(b=>b.classList.remove("active"));
+      document.querySelector(`.qnav[data-qid="${en.target.dataset.qid}"]`)?.classList.add("active");
+    }
+  }),{rootMargin:"-20% 0px -65% 0px"});
+  document.querySelectorAll(".question-card").forEach(c=>ob.observe(c));
+}
+
+function update(){
+  const a=answeredCount();
+  $("answeredStat").textContent=`${a}/${q.length}`;
+  $("progressText").textContent=`Đã trả lời ${a}/${q.length} câu`;
+  $("progressBar").style.width=`${a/q.length*100}%`;
+  document.querySelectorAll(".qnav").forEach(b=>{
+    const item=q.find(x=>x.id===Number(b.dataset.qid));
+    b.classList.toggle("answered",isAnswered(item));
+  });
+}
+
+function tick(){
+  state.timeLeft--;
+  $("timer").textContent=formatTime(state.timeLeft);
+  if(state.timeLeft===60&&!state.warningsShown.one){
+    state.warningsShown.one=true;showToast("⚠️ Còn 1 phút. Hệ thống sẽ tự nộp khi hết giờ.","danger",8000);
+  }
+  if(state.timeLeft<=0){
+    clearInterval(state.timerId);state.timerId=null;
+    if(!state.submitted) submit(true);
+  }
+}
+
+function start(){
+  if(!$("studentName").value.trim()||!$("studentClass").value.trim()){alert("Vui lòng nhập đầy đủ Họ và tên và Lớp.");return}
+  Object.assign(state,{started:true,submitted:false,timeLeft:TOTAL_TIME,answers:{},reviewChecks:{},correctionAnswers:{},correctionAttempt:0,correctionStarted:false,completed:false,submittedAt:null,completedAt:null,attemptId:makeAttemptId(),sentEvents:{},warningsShown:{}});
+  $("setup").classList.add("hidden");$("guide").classList.add("hidden");$("quizArea").style.display="block";$("result").style.display="none";$("timer").textContent="40:00";$("statusStat").textContent="Đang làm";
+  render();state.timerId=setInterval(tick,1000);save(false);window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function reviewItem(item){
+  let ua=isAnswered(item)?state.answers[item.id]:"(Bỏ trống)";
+  if(item.type==="mcq"&&isAnswered(item)){const j="ABCD".indexOf(ua);ua=`${ua}. ${item.options[j]||""}`}
+  return `<article class="review-item wrong"><h4>Câu ${item.id} • ${esc(groups[item.group].title)} • CẦN SỬA</h4>
+  <p>${esc(item.prompt)}</p>
+  <p><b>Em trả lời:</b> ${esc(ua)}</p>
+  <p><b>Đáp án đúng:</b> ${esc(item.displayAnswer)}</p>
+  <p><b>Giải thích:</b> ${esc(item.explanation)}</p>
+  <p><b>Điểm cần nhớ:</b> ${esc(groups[item.group].review)}</p>
+  <label class="review-confirm"><input type="checkbox" data-review-check="${item.id}" ${state.reviewChecks[item.id]?"checked":""}> <span>Tôi đã đọc phần chữa của câu này và hiểu vì sao đáp án cũ sai.</span></label>
+  </article>`;
+}
+
+function buildCorrectionItems(items){
+  const used={};
+  return items.map(item=>{
+    const bank=correctionBanks[item.group]||correctionBanks.rewrite;
+    const idx=used[item.group]||0;used[item.group]=idx+1;
+    const v=bank[idx % bank.length];
+    return {...v,originalId:item.id,group:item.group,key:`c${item.id}`};
+  });
+}
+
+function correctionIsCorrect(v,item){const x=normalize(v);return item.a.map(normalize).includes(x)}
+function allReviewChecked(items){return items.every(i=>!!state.reviewChecks[i.id])}
+
+function completionCode(){
+  const {score}=stats();
+  const base=`${$("studentName").value.trim()}|${$("studentClass").value.trim()}|${score.toFixed(2)}|${wrongItems().map(x=>x.id).join("-")}|${state.correctionAttempt}|${state.completedAt||""}`;
+  let h=2166136261;for(let i=0;i<base.length;i++){h^=base.charCodeAt(i);h=Math.imul(h,16777619)}
+  return `G6U-${(h>>>0).toString(36).toUpperCase().padStart(7,"0")}`;
+}
+
+function teacherReportText(){
+  const {correct,score}=stats(),w=wrongItems();
+  return `GRADE 6 - A2 UNIT TEST REPORT
+Học sinh: ${$("studentName").value.trim()}
+Lớp: ${$("studentClass").value.trim()}
+Điểm: ${score.toFixed(2)} (${correct}/${q.length})
+Thời gian: ${formatTime(TOTAL_TIME-state.timeLeft)}
+Câu sai: ${w.length?w.map(x=>x.id).join(", "):"Không có"}
+Trạng thái: ${reportStatus()}
+Mã xác nhận: ${state.completed?completionCode():"—"}`;
+}
+
+function renderCompletion(){
+  const m=$("completionMount");if(!m)return;
+  const {score}=stats(),w=wrongItems();
+  const noCorrection=!w.length;
+  m.innerHTML=`<div class="completion-banner">
+    <h3>${noCorrection?"✅ HOÀN THÀNH BÀI":"✅ ĐÃ HOÀN THÀNH CORRECTION CHECK"}</h3>
+    <p>${noCorrection?"Bài không có câu sai nên không cần Correction Check.":"Em đã đọc phần chữa và làm đúng 100% Correction Check."}</p>
+    <div class="teacher-report">
+      <p><b>Trạng thái:</b> ${reportStatus()}</p>
+      <p><b>Điểm:</b> ${score.toFixed(2)}</p>
+      <p><b>Số câu sai:</b> ${w.length}</p>
+      <p><b>Số lượt Correction Check:</b> ${state.correctionAttempt}</p>
+      <p><b>Mã xác nhận:</b> <span class="verify-code">${completionCode()}</span></p>
+    </div>
+    <div class="actions no-print">
+      <button class="btn btn-success" id="copyReportBtn">Copy báo cáo</button>
+      <button class="btn btn-secondary" id="resendBtn2">Gửi lại Google Sheet</button>
+      <button class="btn btn-primary" id="retryBtn2">Làm lại bài</button>
+    </div>
+  </div>`;
+  $("copyReportBtn").onclick=async()=>{try{await navigator.clipboard.writeText(teacherReportText());alert("Đã copy báo cáo.")}catch(e){prompt("Copy báo cáo:",teacherReportText())}};
+  $("resendBtn2").onclick=()=>sendToTeacher(state.completed?"REVIEW_COMPLETED":"SUBMIT_RESULT",reportStatus(),true);
+  $("retryBtn2").onclick=retry;
+}
+
+function renderCorrection(items){
+  const m=$("correctionMount");if(!m)return;
+  const checks=buildCorrectionItems(items);
+  let h=`<section class="correction-area">
+    <h3>BƯỚC 2 — CORRECTION CHECK</h3>
+    <div class="alert warn">
+      <b>Ghi chú:</b> Với câu một chỗ trống, hệ thống ghi “CHỈ ĐIỀN TỪ/CỤM TỪ CÒN THIẾU”.
+      Nếu học sinh lỡ gõ nguyên cả câu hoàn chỉnh nhưng đúng, hệ thống vẫn chấp nhận để không mất điểm oan.
+      Cần đúng <b>100%</b> để hoàn thành Correction Check.
+    </div>
+    <div id="correctionFeedback"></div>
+    <div class="correction-list">`;
+  checks.forEach((c,idx)=>{
+    const val=state.correctionAnswers[c.originalId]||"";
+    const ok=val&&correctionIsCorrect(val,c);
+    h+=`<article class="correction-card ${ok?"good":""}">
+      <h4>Check ${idx+1} • ôn lỗi ở Câu ${c.originalId}</h4>
+      <div class="instruction">CHỈ ĐIỀN TỪ/CỤM TỪ CÒN THIẾU</div>
+      <p><b>${esc(c.p)}</b></p>
+      <input type="text" data-c-input="${c.originalId}" value="${esc(val)}" ${ok?"disabled":""} placeholder="Chỉ nhập phần còn thiếu...">
+      <div class="helper">Nếu em gõ nguyên cả câu đúng, hệ thống vẫn chấp nhận.</div>
+      ${ok?"<p><b>✅ Đã sửa đúng.</b></p>":""}
+    </article>`;
+  });
+  h+=`</div><div class="actions"><button class="btn btn-primary" id="submitCorrectionBtn" ${state.completed?"disabled":""}>Kiểm tra phần sửa lỗi</button></div></section>`;
+  m.innerHTML=h;
+  document.querySelectorAll("[data-c-input]").forEach(inp=>inp.oninput=e=>{state.correctionAnswers[e.target.dataset.cInput]=e.target.value;save(false)});
+  $("submitCorrectionBtn").onclick=()=>submitCorrection(items);
+}
+
+async function submitCorrection(items){
+  if(state.completed)return;
+  const checks=buildCorrectionItems(items);
+  state.correctionAttempt++;
+  const bad=checks.filter(c=>!correctionIsCorrect(state.correctionAnswers[c.originalId]||"",c));
+  if(!bad.length){
+    state.completed=true;state.completedAt=new Date().toISOString();
+    $("statusStat").textContent="ĐÃ HOÀN THÀNH CORRECTION CHECK";
+    save(false);renderCorrection(items);renderCompletion();
+    await sendToTeacher("REVIEW_COMPLETED","ĐÃ HOÀN THÀNH CORRECTION CHECK",true);
+    return;
+  }
+  bad.forEach(c=>state.correctionAnswers[c.originalId]="");
+  save(false);renderCorrection(items);
+  const f=$("correctionFeedback");
+  if(f)f.innerHTML=`<div class="alert warn"><b>Lượt ${state.correctionAttempt}: còn ${bad.length} câu chưa đúng.</b><br>${bad.map(c=>`• Câu ${c.originalId}: ${esc(c.h)}`).join("<br>")}</div>`;
+  $("statusStat").textContent="ĐÃ NỘP BÀI - ĐANG CORRECTION CHECK";
+  await sendToTeacher("CORRECTION_PROGRESS","ĐÃ NỘP BÀI - ĐANG CORRECTION CHECK",true);
+}
+
+function bindReview(items){
+  document.querySelectorAll("[data-review-check]").forEach(cb=>cb.onchange=e=>{
+    state.reviewChecks[e.target.dataset.reviewCheck]=e.target.checked;
+    const b=$("startCorrectionBtn");if(b)b.disabled=!allReviewChecked(items);
+    save(false);
+  });
+  const b=$("startCorrectionBtn");
+  if(b){
+    b.disabled=!allReviewChecked(items);
+    b.onclick=async()=>{
+      state.correctionStarted=true;
+      $("statusStat").textContent="ĐÃ NỘP BÀI - ĐANG CORRECTION CHECK";
+      save(false);
+      await sendToTeacher("CORRECTION_START","ĐÃ NỘP BÀI - ĐANG CORRECTION CHECK",true);
+      renderCorrection(items);
+      $("correctionMount")?.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+  }
+}
+
+function renderResult(){
+  const {correct,score}=stats(),w=wrongItems(),passed=score>=PASS_SCORE;
+  $("liveScore").textContent=score.toFixed(2);
+  $("statusStat").textContent=reportStatus();
+
+  let html=`<div class="result-top">
+    <div class="score-ring" style="background:conic-gradient(${passed?"#16794b":"#b42318"} ${Math.min(score,10)*10}%,#e9eef6 0)">
+      <div class="score-inner"><strong>${score.toFixed(2)}</strong><span>/10</span></div>
+    </div>
+    <div>
+      <span class="status ${passed?"pass":"fail"}">${passed?"ĐẠT":"CHƯA ĐẠT"}</span>
+      <h2>Kết quả lần nộp</h2>
+      <p><b>${correct}/${q.length}</b> câu đúng.</p>
+      <p><b>Trạng thái:</b> ${esc(reportStatus())}</p>
+    </div>
+  </div>`;
+
+  if(score<PASS_SCORE){
+    html+=`<div class="alert fail"><b>Điểm dưới 7.0.</b> Hệ thống chưa mở đáp án. Hãy xem lại các phần kiến thức của Unit rồi làm lại bài.</div>
+    <div class="alert warn"><b>Cần ôn:</b> Vocabulary, pronunciation/stress, sentence transformation, comparatives và present tenses.</div>
+    <div class="actions no-print"><button class="btn btn-primary" id="retryBtn">Làm lại bài</button><button class="btn btn-secondary" id="resendBtn">Gửi lại Google Sheet</button></div>`;
+  } else if(!w.length){
+    html+=`<div id="completionMount"></div>`;
+  } else {
+    html+=`<div class="mastery-steps">
+      <div class="mastery-step"><strong>BƯỚC 1</strong>Đọc phần chữa từng câu sai.</div>
+      <div class="mastery-step"><strong>BƯỚC 2</strong>Tích xác nhận đã hiểu lỗi.</div>
+      <div class="mastery-step"><strong>BƯỚC 3</strong>Làm Correction Check đúng 100%.</div>
+    </div>
+    <h3>BƯỚC 1 — XEM VÀ HIỂU LỖI</h3>
+    <div class="review-list">${w.map(reviewItem).join("")}</div>
+    <div class="actions"><button class="btn btn-primary" id="startCorrectionBtn" disabled>Bắt đầu Correction Check</button></div>
+    <div id="correctionMount"></div>
+    <div id="completionMount"></div>`;
+  }
+
+  $("result").innerHTML=html;
+  $("result").style.display="block";
+
+  if(score<PASS_SCORE){
+    $("retryBtn").onclick=retry;
+    $("resendBtn").onclick=()=>sendToTeacher("SUBMIT_RESULT",reportStatus(),true);
+  } else if(!w.length){
+    state.completed=true;state.completedAt=new Date().toISOString();
+    renderCompletion();
+  } else {
+    bindReview(w);
+  }
+}
+
+async function submit(auto=false){
+  if(state.submitted)return;
+  const unanswered=q.length-answeredCount();
+  if(!auto&&unanswered>0&&!confirm(`Em còn ${unanswered} câu chưa trả lời. Vẫn nộp bài?`))return;
+  state.submitted=true;state.submittedAt=new Date().toISOString();
+  clearInterval(state.timerId);state.timerId=null;
+
+  $("statusStat").textContent="ĐÃ NỘP BÀI";
+  await sendToTeacher("SUBMIT_CLICK","ĐÃ NỘP BÀI",true);
+
+  $("quizArea").style.display="none";
+  renderResult();
+
+  await sendToTeacher("SUBMIT_RESULT",reportStatus(),true);
+}
+
+function retry(){
+  clearInterval(state.timerId);
+  localStorage.removeItem(STORAGE_KEY);
+  location.reload();
+}
+
+function save(showMsg=true){
+  const data={
+    state:{
+      ...state,
+      timerId:null
+    },
+    studentName:$("studentName")?.value||"",
+    studentClass:$("studentClass")?.value||"",
+    studentCode:$("studentCode")?.value||""
+  };
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  if(showMsg) alert("Đã lưu tạm trên máy.");
+}
+
+$("startBtn").onclick=start;
+$("submitBtn").onclick=()=>submit(false);
+$("saveBtn").onclick=()=>save(true);
+updateSheetConnection(sheetConfigured()?"✓ Đã cấu hình Google Sheet":"Chưa cấu hình Google Sheet",sheetConfigured()?"ok":"warn");
+})();
+</script>
+</body>
+</html>
